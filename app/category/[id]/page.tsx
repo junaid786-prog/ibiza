@@ -1,48 +1,60 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import {Button} from "@/components/ui/button";
-import { Card, CardHeader, CardFooter } from "@/components/ui/card"
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useParams, useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardFooter } from '@/components/ui/card';
 
-const CategoryPage = () => {
-    const router = useRouter()
-    const { id } = router.query
-    const [products, setProducts] = useState([])
+const CollectionDetail = () => {
+    const { id } = useParams();
+    const router = useRouter();
+    // dummy data
+    const [collection, setCollection] = useState({
+        name: 'Summer Collection',
+        description: 'Exclusive summer collection featuring handmade designs.',
+        products: [
+            {
+                id: 1,
+                name: 'Blusa Bolena Naranja',
+                price: 890,
+                image: '/collection-1.jpeg?height=600&width=600',
+            },
+            {
+                id: 2,
+                name: 'Vestido Ibiza',
+                price: 1200,
+                image: '/collection-2.jpeg?height=600&width=600',
+            },
+        ],
 
-    useEffect(() => {
-        // Fetch products for the category (replace with actual data fetching)
-        const fetchProducts = async () => {
-            const response = await fetch(`/api/categories/${id}/products`)
-            const data = await response.json()
-            setProducts(data)
-        }
-
-        if (id) {
-            fetchProducts()
-        }
-    }, [id])
+    });
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold mb-8">Ibiza's - Category {id}</h1>
+        <div className="container mx-auto px-8 py-8">
+            <h1 className="text-4xl font-bold mb-8">{collection.name}</h1>
+            <p className="mb-8">{collection.description}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {products.map((product) => (
+                {collection.products.map((product) => (
                     <Card key={product.id} className="shadow-lg">
                         <CardHeader>
+                            {/* NAME */}
+                            <div className="flex justify-between items-center my-2">
+
+                            <h2 className="text-xl font-semibold">{product.name}</h2>
+                            {/* PRICE */}
+                            <p className="text-lg font-semibold">${product.price.toFixed(2)}</p>
+                            </div>
+
+                                {/* IMAGE */}
                             <Image
                                 src={product.image}
                                 alt={product.name}
                                 width={300}
                                 height={300}
-                                className="object-cover w-full h-full"
+                                className="rounded-lg object-cover w-full h-full"
                             />
                         </CardHeader>
-                        {/*<CardBody>*/}
-                        {/*    <h2 className="text-xl font-semibold">{product.name}</h2>*/}
-                        {/*    <p className="text-lg font-medium text-gray-700">${product.price.toFixed(2)}</p>*/}
-                        {/*</CardBody>*/}
                         <CardFooter>
                             <Button
                                 className="w-full"
@@ -55,7 +67,7 @@ const CategoryPage = () => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default CategoryPage
+export default CollectionDetail;

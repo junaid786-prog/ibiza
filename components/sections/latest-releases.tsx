@@ -62,7 +62,7 @@ export default function LatestReleases() {
         </div>
         <div className="mt-12 text-center">
           <Button asChild>
-            <Link href="/shop">View All Products</Link>
+            <Link href="/collections">View All Products</Link>
           </Button>
         </div>
       </div>

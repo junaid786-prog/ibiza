@@ -1,18 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from "@/components/ui/button"
-
-import image1 from "../../public/collections/coll-1.jpeg";
-import image2 from "../../public/collections/coll-2.jpeg";
-import image3 from "../../public/collections/coll-3.jpeg";
-import image4 from "../../public/collections/coll-4.jpeg";
-
-const collections = [
-  { id: 1, name: "Blusas", image: image1, slug: "blusas" },
-  { id: 2, name: "Vestidos", image: image2, slug: "vestidos" },
-  { id: 3, name: "Pantalones", image: image3, slug: "pantalones" },
-  { id: 4, name: "Zapatos", image: image4, slug: "zapatos" },
-]
+import {collections} from "@/data/dummy-data";
 
 export default function CollectionsPage() {
   return (

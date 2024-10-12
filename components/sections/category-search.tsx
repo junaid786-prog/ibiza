@@ -11,7 +11,7 @@ export default function CategorySearch() {
   return (
     <section className="py-16 bg-gray-50 font-serif">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Search for Categories</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">Search for Collections</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
             <Link key={category.name} href={category.link} className="group">
