@@ -7,6 +7,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import CartSheet from "@/components/sections/cart-sheet"
+import {brand} from "@/constants/strings";
 
 export default function Navbar() {
   return (
@@ -35,7 +36,7 @@ export default function Navbar() {
               </Sheet>
             </Button>
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold font-serif">QUETZAL</span>
+              <span className="text-2xl font-bold font-serif">{brand}</span>
             </Link>
           </div>
           <nav className="hidden lg:flex space-x-8">

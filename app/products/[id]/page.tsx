@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 const product = {
   name: "Blusa Bolena Naranja",
   price: 890,
-  description: "Blusa de algodón con bordado a mano. Diseño exclusivo de Quetzal.",
+  description: "Blusa de algodón con bordado a mano. Diseño exclusivo de Ibiza's.",
   images: [
     "/placeholder.svg?height=600&width=600",
     "/placeholder.svg?height=600&width=600",
@@ -19,7 +19,7 @@ const product = {
     "/placeholder.svg?height=600&width=600",
   ],
   sizes: ["XS", "S", "M", "L", "XL"],
-  details: "Blusa de algodón con bordado a mano. Diseño exclusivo de Quetzal. Hecha en México por artesanas locales.",
+  details: "Blusa de algodón con bordado a mano. Diseño exclusivo de Ibiza's. Hecha en México por artesanas locales.",
   care: "Lavar a mano con agua fría. No usar secadora. Planchar a temperatura baja.",
 }
 
