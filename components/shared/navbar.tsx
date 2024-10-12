@@ -1,11 +1,12 @@
 import Link from "next/link"
-import { Menu, Search, ShoppingBag } from "lucide-react"
+import { Menu, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import CartSheet from "@/components/sections/cart-sheet"
 
 export default function Navbar() {
   return (
@@ -34,11 +35,11 @@ export default function Navbar() {
               </Sheet>
             </Button>
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold font-serif">IBIZA'S</span>
+              <span className="text-2xl font-bold font-serif">QUETZAL</span>
             </Link>
           </div>
           <nav className="hidden lg:flex space-x-8">
-            <Link href="#" className="text-sm font-medium hover:text-gray-600 transition-colors">
+            <Link href="/collections" className="text-sm font-medium hover:text-gray-600 transition-colors">
               Shop
             </Link>
             <Link href="#" className="text-sm font-medium hover:text-gray-600 transition-colors">
@@ -52,9 +53,7 @@ export default function Navbar() {
             <Button variant="ghost" size="icon" className="mr-2">
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <ShoppingBag className="h-5 w-5" />
-            </Button>
+            <CartSheet />
           </div>
         </div>
       </div>
