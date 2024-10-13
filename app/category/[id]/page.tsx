@@ -1,41 +1,25 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardFooter } from '@/components/ui/card';
+import {categories} from "@/data/dummy-data";
 
-const CollectionDetail = () => {
+const CategoryDetail = () => {
     const { id } = useParams();
     const router = useRouter();
-    // dummy data
-    const [collection, setCollection] = useState({
-        name: 'Summer Collection',
-        description: 'Exclusive summer collection featuring handmade designs.',
-        products: [
-            {
-                id: 1,
-                name: 'Blusa Bolena Naranja',
-                price: 890,
-                image: '/collection-1.jpeg?height=600&width=600',
-            },
-            {
-                id: 2,
-                name: 'Vestido Ibiza',
-                price: 1200,
-                image: '/collection-2.jpeg?height=600&width=600',
-            },
-        ],
 
-    });
+    let category = categories.find((category) => category.id === parseInt(
+        id
+    ));
 
     return (
         <div className="container mx-auto px-8 py-8">
-            <h1 className="text-4xl font-bold mb-8">{collection.name}</h1>
-            <p className="mb-8">{collection.description}</p>
+            <h1 className="text-4xl font-bold mb-8">{category?.name}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {collection.products.map((product) => (
+                {category?.products?.map((product) => (
                     <Card key={product.id} className="shadow-lg">
                         <CardHeader>
                             {/* NAME */}
@@ -70,4 +54,4 @@ const CollectionDetail = () => {
     );
 };
 
-export default CollectionDetail;
+export default CategoryDetail;

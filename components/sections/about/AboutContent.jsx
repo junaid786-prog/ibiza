@@ -1,3 +1,4 @@
+import {Button} from "@/components/ui/button";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
@@ -8,9 +9,9 @@ const images = [
 
 export default function AboutContent() {
     return (
-        <section className="py-16 px-4 md:px-0 flex flex-col items-center">
+        <section className="py-16 px-4 md:px-0 flex flex-col items-center mx-8">
             <div className="container mx-auto max-w-3xl">
-                <h2 className="text-3xl font-bold mb-8 text-center">Our Story</h2>
+                <h2 className="text-5xl font-extrabold mb-8 text-center font-serif">Our Story</h2>
                 <div className="space-y-6 text-lg">
                     <p>
                         Ibiza's was born from a passion for the free-spirited, bohemian lifestyle that embodies the magical island of Ibiza. Our journey began when our founder, inspired by the vibrant culture and effortless style of the island, decided to create a brand that would capture this essence and bring it to women around the world.
@@ -26,14 +27,7 @@ export default function AboutContent() {
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col space-y-4 my-4">
-                {images.map((image, index) => (
-                    <div key={index} className="relative aspect-w-1 aspect-h-1 text-black">
-                        <img src={image.src} alt={image.alt} className="rounded-lg w-full aspect-square" />
-
-                    </div>
-                ))}
-            </div>
+            <Button href="/about" className="mt-8">Get to know us</Button>
         </section>
     )
 }
