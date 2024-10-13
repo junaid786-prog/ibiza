@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {collections} from "@/data/dummy-data";
+import {Heading} from "@/components/shared/header";
 
 export default function CollectionsPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold font-serif text-center mb-12">Nuestras Colecciones</h1>
+      <Heading title={"COLLECTIONS"} subtitle={"DISCOVER"} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {collections.map((collection) => (
           <Link href={`/collections/${collection.id}`} key={collection.id} className="group">

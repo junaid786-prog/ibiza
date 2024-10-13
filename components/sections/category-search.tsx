@@ -1,11 +1,12 @@
 import Link from "next/link"
 import {categories} from "@/data/dummy-data";
+import {Heading} from "@/components/shared/header";
 
 export default function CategorySearch() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-center mb-8 font-serif">Search for Categories</h2>
+        <Heading title={"CATEGORIES"} subtitle={"SEARCH FOR"} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category) => (
               <Link key={category.name} href={
