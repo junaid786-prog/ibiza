@@ -2,7 +2,7 @@ import { Star, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
-export const ProductCard= ({product}) => {
+export const ProductCard= ({product}: {product: any}) => {
     return (
         <div className="w-full max-w-sm mx-auto">
             <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">

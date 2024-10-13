@@ -12,7 +12,7 @@ export default function AboutPage() {
                 <AboutHero />
                 <AboutContent page={true}/>
                 <AboutPress/>
-                <AboutGallery/>
+                <AboutGallery short={false}/>
                 <Newsletter />
             </main>
         </div>

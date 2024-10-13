@@ -8,12 +8,12 @@ import { Card, CardHeader, CardFooter } from '@/components/ui/card';
 import {categories} from "@/data/dummy-data";
 
 const CategoryDetail = () => {
-    const { id } = useParams();
+    const params = useParams();
     const router = useRouter();
 
-    let category = categories.find((category) => category.id === parseInt(
-        id
-    ));
+    let category = categories.find((category) => category.id ===
+        Number(params?.id)
+    );
 
     return (
         <div className="container mx-auto px-8 py-8">

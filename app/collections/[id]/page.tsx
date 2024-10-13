@@ -9,8 +9,8 @@ import { Card, CardHeader, CardFooter, CardTitle } from '@/components/ui/card';
 import {collections} from "@/data/dummy-data";
 
 const CollectionDetail = () => {
-  const { id } = useParams();
-    const collection = collections.find((collection) => collection.id === Number(id));
+  const params = useParams();
+    const collection = collections.find((collection) => collection.id === Number(params?.id));
 
   return (
       <div className="container mx-auto px-4 py-8">

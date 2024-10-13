@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link";
 
-export default function HorizontalCollectionCard({collection}) {
+export default function HorizontalCollectionCard({collection}: {collection: any}) {
     return (
         <Card className="overflow-hidden">
             <div className="flex flex-col sm:flex-row">
@@ -12,7 +12,7 @@ export default function HorizontalCollectionCard({collection}) {
                         alt="Summer Collection"
                         className="w-full h-48 sm:h-full object-cover"
                         height="200"
-                        src={collection.image}
+                        src={collection?.image}
                         style={{
                             aspectRatio: "300/200",
                             objectFit: "cover",
@@ -33,7 +33,7 @@ export default function HorizontalCollectionCard({collection}) {
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                     {
-                        collection.products.slice(0,2).map((product) => (
+                        collection.products.slice(0,2).map(({product}:{product: any}) => (
                             <div key={product.id} className="flex rounded-lg items-center justify-between p-2 bg-gray-200">
                                 {/*image*/}
                                 <div className={"h-full p-2 flex flex-col justify-between"}>

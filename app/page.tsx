@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <HeroSlider />
       <LatestReleases />
-      <AboutContent />
+      <AboutContent page={false} />
       <CategorySearch />
     </div>
   );
