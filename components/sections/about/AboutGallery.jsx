@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {Heading} from "@/components/shared/header";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
@@ -9,7 +10,8 @@ const images = [
 
 export default function AboutGallery({short}) {
     return (
-        <section className="py-8">
+        <section className="mah-w-screen px-80 py-16">
+            <Heading title={"GALLERY"} subtitle={"EXPLORE OUR"} />
             <div className={`${short ? "grid grid-cols-2 space-y-2 space-x-2":"flex flex-col space-y-4 my-4"}`}>
                 {images.map((image, index) => (
                     <div key={index} className="relative aspect-w-1 aspect-h-1 text-black">

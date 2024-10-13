@@ -10,7 +10,7 @@ export default function Newsletter() {
                     <p className="text-[#666666] mb-8">Join our community and be the first to know about new collections, exclusive offers, and Ibiza-inspired content.</p>
                     <form className="flex flex-col sm:flex-row gap-4">
                         <Input type="email" placeholder="Enter your email" className="flex-grow bg-white" />
-                        <Button type="submit" className="bg-[#a0522d] text-white hover:bg-[#8b4513]">Subscribe</Button>
+                        <Button type="submit" className="text-white hover:bg-[#8b4513]">Subscribe</Button>
                     </form>
                 </div>
             </div>

@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import {brand} from "@/constants/strings";
+import {categories} from "@/data/dummy-data";
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -25,7 +26,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -51,15 +52,16 @@ export default function Footer() {
             </Accordion>
           </div>
           <div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" className="w-full">
               <AccordionItem value="categories">
                 <AccordionTrigger>Categories</AccordionTrigger>
                 <AccordionContent>
                   <nav className="flex flex-col space-y-2">
-                    <Link href="/category/home-decor" className="hover:text-gray-300 transition-colors">Home Decor</Link>
-                    <Link href="/category/textiles" className="hover:text-gray-300 transition-colors">Textiles</Link>
-                    <Link href="/category/ceramics" className="hover:text-gray-300 transition-colors">Ceramics</Link>
-                    <Link href="/category/jewelry" className="hover:text-gray-300 transition-colors">Jewelry</Link>
+                    {
+                      categories.map((category, index) => (
+                        <Link key={index} href={`/category/${category.id}`} className="hover:text-gray-300 transition-colors">{category.name}</Link>
+                      ))
+                    }
                   </nav>
                 </AccordionContent>
               </AccordionItem>

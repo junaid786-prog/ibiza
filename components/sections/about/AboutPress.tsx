@@ -9,8 +9,8 @@ const images = [
 
 export default function AboutPress() {
     return (
-        <section className="py-16 px-4 md:px-2 sm:px-1 flex flex-wrap items-center bg-gray-200">
-            <div className="lg:mx-8 md:mx-8 sm:mx-5 xs:mx-2 max-w-3xl">
+        <section className="p-16 flex flex-wrap items-center bg-gray-200">
+            <div className="max-w-3xl">
                 <Heading title={"HOW IT STARTED"} />
                 <div >
                     <p className="text-lg">

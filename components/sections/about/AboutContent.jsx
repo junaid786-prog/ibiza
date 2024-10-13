@@ -5,14 +5,12 @@ import Link from "next/link";
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
     { src: '/ibiza-1.jpeg', alt: 'Bohemian style clothing' },
-    { src: '/ibiza-2.jpeg', alt: 'Bohemian style clothing' },
-    { src: '/ibiza-shop.jpeg', alt: 'Artisan at work' },
 ]
 
 export default function AboutContent({page}) {
     return (
-        <section className={`py-16 px-4 md:px-0 flex flex-col items-center ${page ? '':'mr-12'}`}>
-            <div className="container mx-auto max-w-3xl">
+        <section className={`w-full py-16 flex items-center ${page ? '':'mr-12 bg-gray-200'}`}>
+            <div className="container px-16">
                 <Heading title={page ? 'ABOUT US' : 'OUR STORY'} />
                 <div className="space-y-6 text-lg">
                     <p>
@@ -28,16 +26,26 @@ export default function AboutContent({page}) {
                         Join us on this journey of self-expression and conscious fashion. Embrace the Ibiza spirit, wherever you are in the world.
                     </p>
                 </div>
+                {
+                    !page &&
+                    <Button
+                        className="mt-8">
+                        <Link href={'/about'}>
+                            Get to know us
+                        </Link>
+                    </Button>
+                }
             </div>
-            {
-                !page &&
-                <Button
-                    className="mt-8">
-                    <Link href={'/about'}>
-                        Get to know us
-                    </Link>
-                </Button>
-            }
+            <div className={"mx-32"}>
+                <div className={`grid lg:grid-cols-2 gap-4 mt-8`}>
+                    {images.map((image, index) => (
+                        <div key={index} className="relative aspect-w-1 aspect-h-1 text-black">
+                            <img src={image.src} alt={image.alt} className="rounded-lg w-full aspect-square"/>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
         </section>
     )
 }
