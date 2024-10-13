@@ -47,7 +47,7 @@ export default function Navbar() {
                 </Sheet>
               </Button>
               <Link href="/" className="flex-shrink-0 flex items-center">
-                <span className="text-4xl font-extrabold">{brand}</span>
+                <span className="text-4xl font-extrabold font-serif">{brand}</span>
               </Link>
             </div>
             {/* Main navbar */}

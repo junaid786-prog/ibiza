@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 export default function Newsletter() {
     return (
-        <section className="py-16 bg-[#e6dfd8]">
+        <section className="py-16">
             <div className="container mx-auto px-4">
                 <div className="max-w-2xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-4 text-[#333333]">Stay Connected</h2>

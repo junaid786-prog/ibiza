@@ -7,7 +7,7 @@ const images = [
     { src: '/ibiza-shop.jpeg', alt: 'Artisan at work' },
 ]
 
-export default function AboutContent() {
+export default function AboutContent({page}) {
     return (
         <section className="py-16 px-4 md:px-0 flex flex-col items-center mx-8">
             <div className="container mx-auto max-w-3xl">
@@ -27,7 +27,10 @@ export default function AboutContent() {
                     </p>
                 </div>
             </div>
-            <Button href="/about" className="mt-8">Get to know us</Button>
+            {
+                !page &&
+                <Button href="/about" className="mt-8">Get to know us</Button>
+            }
         </section>
     )
 }
