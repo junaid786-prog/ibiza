@@ -9,8 +9,8 @@ const images = [
 
 export default function AboutContent({page}) {
     return (
-        <section className={`w-full py-16 flex items-center ${page ? '':'mr-12 bg-gray-200'}`}>
-            <div className="container px-16">
+        <section className={`w-full py-16 mx-auto flex items-center ${page ? '':'mr-12 bg-gray-200'}`}>
+            <div className="container px-32">
                 <Heading title={page ? 'ABOUT US' : 'OUR STORY'} />
                 <div className="space-y-6 text-lg">
                     <p>

@@ -1,28 +1,45 @@
-import {Card, CardFooter, CardHeader} from "@/components/ui/card";
-import Link from "next/link";
-import {Button} from "@/components/ui/button";
+import { Star, ShoppingCart } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 
-export const ProductCard = ({ product }) => {
+export const ProductCard= ({product}) => {
     return (
-        <Card key={product.id} className="shadow-lg">
-            <CardHeader>
+        <div className="w-full max-w-sm mx-auto">
+            <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="absolute top-0 left-0 z-10 m-2">
+                    <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-100">New Arrival</Badge>
+                </div>
                 <img
+                    alt="Elegant Summer Dress"
+                    className="object-cover w-full h-[30rem]"
+                    height="800"
                     src={product.image}
-                    alt={product.name}
-                    className="rounded-lg object-cover lg:h-[600px] md:h-[500px] sm:h-[400px] w-full"
+                    style={{
+                        aspectRatio: "16/9",
+                        objectFit: "cover",
+                    }}
+                    width="400"
                 />
-                <div className="flex flex-col items-center w-full rounded-lg bg-transparent">
-                <Link href={`/products/${product.id}`} className="-top-6 relative w-fit shadow-md shadow-white rounded-lg">
-                    <Button className="w-full">Show Options</Button>
-                </Link>
+                <div className="p-4">
+                    <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+                    <p className="mt-1 text-sm text-gray-600">{product.shortDescription}</p>
+                    <div className="flex items-center mt-2">
+                        <span className="text-black font-bold text-xl">$79.99</span>
+                        <span className="ml-2 text-sm text-gray-500 line-through">$99.99</span>
+                    </div>
+                    <div className="flex items-center mt-2">
+                        {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-current text-yellow-500" />
+                        ))}
+                        <span className="ml-2 text-sm text-gray-600">(128 reviews)</span>
+                    </div>
+                    <div className="mt-4">
+                        <Button className="w-full hover:bg-pink-700 text-white">
+                            <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+                        </Button>
+                    </div>
                 </div>
-            </CardHeader>
-            <CardFooter>
-                <div className="w-full flex justify-between items-center -mt-6">
-                    <h3 className="text-2xl font-semibold">{product.name}</h3>
-                    <p className="text-lg font-semibold">{product.price} €</p>
-                </div>
-            </CardFooter>
-        </Card>
-    );
+            </div>
+        </div>
+    )
 }
