@@ -9,8 +9,8 @@ export default function CollectionsPage() {
     <div className="container mx-auto px-4 py-16">
       <Heading title={"COLLECTIONS"} subtitle={"DISCOVER"} />
       <div className="space-y-8">
-        {collections.map((collection) => (
-            <CollectionCard collection={collection}/>
+        {collections?.map((coll) => (
+            <CollectionCard collection={coll}/>
         ))}
       </div>
     </div>

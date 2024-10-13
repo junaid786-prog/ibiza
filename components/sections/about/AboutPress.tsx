@@ -10,21 +10,25 @@ const images = [
 export default function AboutPress() {
     return (
         <section className="p-16 flex flex-wrap items-center bg-gray-200">
-            <div className="max-w-3xl">
-                <Heading title={"HOW IT STARTED"} />
-                <div >
-                    <p className="text-lg">
-                        Ibiza's was born from a passion for the free-spirited, bohemian lifestyle that embodies the magical island of Ibiza. Our journey began when our founder, inspired by the vibrant culture and effortless style of the island, decided to create a brand that would capture this essence and bring it to women around the world.
-                    </p>
-                </div>
-            </div>
-            <div className="flex flex-1 space-x-4 lg:mx-8 md:mx-6 sm:mx-4 flex-wrap justify-center w-[40%] min-w-80">
-                {images.slice(0,2).map((image, index) => (
+
+            <div className="flex flex-1 space-x-4 lg:mx-8 md:mx-6 sm:mx-4 flex-wrap justify-center w-fit">
+                {images.slice(0, 3).map((image, index) => (
                     <div key={index} className="relative aspect-w-1 aspect-h-1 text-black my-2">
-                        <img src={image.src} alt={image.alt} className="rounded-lg w-80 aspect-square" />
+                        <img src={image.src} alt={image.alt} className="rounded-lg w-64 aspect-square"/>
 
                     </div>
                 ))}
+            </div>
+            <div className="max-w-3xl">
+                <Heading title={"HOW IT STARTED"}/>
+                <div>
+                    <p className="text-lg">
+                        Ibiza's was born from a passion for the free-spirited, bohemian lifestyle that embodies the
+                        magical island of Ibiza. Our journey began when our founder, inspired by the vibrant culture and
+                        effortless style of the island, decided to create a brand that would capture this essence and
+                        bring it to women around the world.
+                    </p>
+                </div>
             </div>
         </section>
     )
