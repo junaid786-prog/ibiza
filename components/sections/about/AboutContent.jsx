@@ -11,7 +11,7 @@ const images = [
 
 export default function AboutContent({page}) {
     return (
-        <section className="py-16 px-4 md:px-0 flex flex-col items-center mx-8">
+        <section className={`py-16 px-4 md:px-0 flex flex-col items-center ${page ? '':'mr-12'}`}>
             <div className="container mx-auto max-w-3xl">
                 <Heading title={page ? 'ABOUT US' : 'OUR STORY'} />
                 <div className="space-y-6 text-lg">
