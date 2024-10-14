@@ -1,8 +1,11 @@
+"use client"
+
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link";
 import Image from "next/image";
+import {brand} from "@/constants/strings";
 
 export default function CollectionCard({ collection }: { collection: any }) {
     return (
@@ -22,9 +25,19 @@ export default function CollectionCard({ collection }: { collection: any }) {
                             {collection?.description}
                         </p>
                     </div>
+                    {/*  any section of your choice  */}
+                    <div className="flex items-center justify-between">
+                        <p className="text-lg mb-4">{brand} has the best collection of {collection?.name} for you.
+                        </p>
+                    </div>
                     <div className="grid grid-cols-2 gap-3">
                     {
-                        collection?.products?.slice(0,2).map(({product}: {product:any}) => (
+                        collection?.products?.slice(0,2)?.map((product: {
+                            image: string;
+                            price: any;
+                            name: any;
+                            id: React.Key | null | undefined;
+                            product:any}) => (
                             <div key={product?.id} className="flex rounded-lg items-center justify-between p-2 bg-gray-200">
                                 {/*image*/}
                                 <div className={"h-full p-2 flex flex-col justify-between"}>
@@ -32,7 +45,7 @@ export default function CollectionCard({ collection }: { collection: any }) {
                                 <p className="text-xl font-semibold">{product?.name}</p>
                                 <p className="text-lg font-semibold text-primary">${product?.price}</p>
                                 </div>
-                                <Image src={product?.image} alt={product?.name} width={64} height={64} className="object-cover w-24 h-32 rounded-lg"/>
+                                <Image src={product?.image} alt={product?.name} width={64} height={64} className=" w-24 h-32 rounded-lg"/>
                             </div>
                         ))
                     }

@@ -62,7 +62,7 @@ export default function Navbar() {
                 {/* COLLECTIONS */}
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
-                    Collections
+                    <Link href="/collections">Collections</Link>
                   </MenubarTrigger>
                   <MenubarContent>
                     {collections.map((collection) => (
