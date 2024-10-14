@@ -7,8 +7,8 @@ import { ShoppingBag, X, Plus, Minus } from "lucide-react"
 
 // This would typically come from your global state management
 const initialCartItems = [
-  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/placeholder.svg?height=80&width=80" },
-  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/placeholder.svg?height=80&width=80" },
+  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/dresses/dress-1.jpeg" },
+  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/dresses/dress-2.jpeg" },
 ]
 
 export default function CartSheet() {

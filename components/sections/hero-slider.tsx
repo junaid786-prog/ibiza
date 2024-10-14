@@ -7,17 +7,17 @@ import Image from "next/image";
 
 const slides = [
     {
-        image: '/collections/shop-1.jpeg?height=800&width=1600',
+        image: '/collections/shop-1.jpeg',
         title: 'Handcrafted Elegance',
         subtitle: 'Discover our latest collection',
     },
     {
-        image: '/collections/shop-2.jpeg?height=800&width=1600',
+        image: '/collections/shop-2.jpeg',
         title: 'Timeless Beauty',
         subtitle: 'Explore unique pieces',
     },
     {
-        image: '/collections/shop-3.jpeg?height=800&width=1600',
+        image: '/collections/shop-3.jpeg',
         title: 'Artisanal Craftsmanship',
         subtitle: 'Experience the difference',
     },
