@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 
 export const ProductCard= ({product}: {product: any}) => {
     return (
-        <div className="w-full max-w-sm mx-auto">
+        <div className="w-full mx-auto">
             <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 z-10 m-2">
                     <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-100">New Arrival</Badge>
