@@ -7,8 +7,8 @@ import { ShoppingBag, X, Plus, Minus } from "lucide-react"
 
 // This would typically come from your global state management
 const initialCartItems = [
-  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/placeholder.svg?height=80&width=80" },
-  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/placeholder.svg?height=80&width=80" },
+  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/dresses/dress-1.jpeg" },
+  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/dresses/dress-2.jpeg" },
 ]
 
 export default function CartSheet() {
@@ -43,7 +43,7 @@ export default function CartSheet() {
         <SheetHeader>
           <SheetTitle className="font-serif text-2xl">Your Cart</SheetTitle>
         </SheetHeader>
-        <div className="mt-8 flex flex-col h-full">
+        <div className="flex flex-col flex-1 h-grow">
           <div className="flex-grow overflow-auto">
             {cartItems.map(item => (
               <div key={item.id} className="flex items-center py-4 border-b">
@@ -67,7 +67,7 @@ export default function CartSheet() {
               </div>
             ))}
           </div>
-          <div className="mt-auto pt-4">
+          <div className="mt-auto">
             <div className="flex justify-between items-center mb-4">
               <span className="font-medium">Total</span>
               <span className="font-medium">${total.toFixed(2)}</span>

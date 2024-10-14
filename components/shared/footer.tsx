@@ -11,6 +11,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import {brand} from "@/constants/strings";
+import {categories} from "@/data/dummy-data";
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -18,24 +20,23 @@ export default function Footer() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically handle the newsletter signup
-    console.log('Newsletter signup:', email)
     setEmail('')
     alert('Thank you for signing up!')
   }
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">About Quetzal</h3>
+            <h3 className="text-lg font-semibold">About {brand}</h3>
             <p className="text-sm text-gray-400">
-              Quetzal Collection brings you handcrafted artisanal goods from around the world, 
+              {brand} Collection brings you handcrafted artisanal goods from around the world,
               supporting fair trade and sustainable practices.
             </p>
           </div>
           <div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" className="w-full">
               <AccordionItem value="quick-links">
                 <AccordionTrigger>Quick Links</AccordionTrigger>
                 <AccordionContent>
@@ -50,15 +51,16 @@ export default function Footer() {
             </Accordion>
           </div>
           <div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" className="w-full">
               <AccordionItem value="categories">
                 <AccordionTrigger>Categories</AccordionTrigger>
                 <AccordionContent>
                   <nav className="flex flex-col space-y-2">
-                    <Link href="/category/home-decor" className="hover:text-gray-300 transition-colors">Home Decor</Link>
-                    <Link href="/category/textiles" className="hover:text-gray-300 transition-colors">Textiles</Link>
-                    <Link href="/category/ceramics" className="hover:text-gray-300 transition-colors">Ceramics</Link>
-                    <Link href="/category/jewelry" className="hover:text-gray-300 transition-colors">Jewelry</Link>
+                    {
+                      categories.map((category, index) => (
+                        <Link key={index} href={`/category/${category.id}`} className="hover:text-gray-300 transition-colors">{category.name}</Link>
+                      ))
+                    }
                   </nav>
                 </AccordionContent>
               </AccordionItem>
@@ -96,7 +98,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Quetzal Collection. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {brand} Collection. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,34 +1,32 @@
-import Link from "next/link"
-
-const categories = [
-  { name: "Home Decor", image: "/dresses/dress-1.jpeg?height=300&width=300", link: "/category/home-decor" },
-  { name: "Textiles", image: "/dresses/dress-2.jpeg?height=300&width=300", link: "/category/textiles" },
-  { name: "Ceramics", image: "/dresses/dress-3.jpeg?height=300&width=300", link: "/category/ceramics" },
-  { name: "Jewelry", image: "/dresses/dress-4.jpeg?height=300&width=300", link: "/category/jewelry" },
-]
+import Link from "next/link";
+import Image from "next/image";
+import { categories } from "@/data/dummy-data";
+import { Heading } from "@/components/shared/header";
 
 export default function CategorySearch() {
-  return (
-    <section className="py-16 bg-gray-50 font-serif">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Search for Categories</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {categories.map((category) => (
-            <Link key={category.name} href={category.link} className="group">
-              <div className="relative aspect-square overflow-hidden rounded-lg">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center transition-opacity duration-300 group-hover:bg-opacity-50">
-                  <h3 className="text-white text-xl font-semibold">{category.name}</h3>
+    return (
+        <section className="py-16">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <Heading title={"CATEGORIES"} subtitle={"SEARCH FOR"} />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {categories.map((category) => (
+                        <Link key={category.name} href={`/category/${category.id}`} className="flex flex-col">
+                            <div className="relative aspect-square overflow-hidden rounded-lg">
+                                <Image
+                                    src={category.image}
+                                    alt={category.name}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="transition-transform duration-300 group-hover:scale-110"
+                                />
+                            </div>
+                            <div className="inset-0 bg-opacity-40 flex items-center justify-center transition-opacity duration-300 py-4">
+                                <h3 className="text-black text-xl font-semibold">{category.name}</h3>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+            </div>
+        </section>
+    );
 }
