@@ -7,7 +7,7 @@ export default function AboutUs() {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2">
         <AboutContent page={true} />
-        <AboutGallery short={true} />
+        <AboutGallery />
       </div>
     </section>
   )

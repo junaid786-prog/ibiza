@@ -3,20 +3,21 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import Image from "next/image";
 
 const slides = [
     {
-        image: 'collections/shop-1.jpeg?height=800&width=1600',
+        image: '/collections/shop-1.jpeg?height=800&width=1600',
         title: 'Handcrafted Elegance',
         subtitle: 'Discover our latest collection',
     },
     {
-        image: 'collections/shop-2.jpeg?height=800&width=1600',
+        image: '/collections/shop-2.jpeg?height=800&width=1600',
         title: 'Timeless Beauty',
         subtitle: 'Explore unique pieces',
     },
     {
-        image: 'collections/shop-3.jpeg?height=800&width=1600',
+        image: '/collections/shop-3.jpeg?height=800&width=1600',
         title: 'Artisanal Craftsmanship',
         subtitle: 'Experience the difference',
     },
@@ -47,11 +48,7 @@ export default function HeroSlider() {
                         className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                         }`}
                     >
-                        <img
-                            src={slide.image}
-                            alt={slide.title}
-                            className="object-cover w-full h-full filter brightness-75"
-                        />
+                        <Image src={slide.image} alt={slide.title} layout="fill" objectFit="cover" className="object-cover w-full h-full filter brightness-75"/>
                         <div className="absolute inset-0 bg-black bg-opacity-20" />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
                             <h1 className="text-5xl md:text-5xl lg:text-6xl font-bold mb-4 font-serif">{slide.title}</h1>

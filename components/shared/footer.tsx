@@ -20,7 +20,6 @@ export default function Footer() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically handle the newsletter signup
-    console.log('Newsletter signup:', email)
     setEmail('')
     alert('Thank you for signing up!')
   }
@@ -37,7 +36,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" className="w-full">
               <AccordionItem value="quick-links">
                 <AccordionTrigger>Quick Links</AccordionTrigger>
                 <AccordionContent>

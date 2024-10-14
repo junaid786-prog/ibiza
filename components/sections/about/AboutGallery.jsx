@@ -1,6 +1,5 @@
-import Image from 'next/image'
+
 import {Heading} from "@/components/shared/header";
-import {Button} from "@/components/ui/button";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
@@ -9,7 +8,7 @@ const images = [
     { src: '/collections/coll-3.jpeg?height=300&width=300', alt: 'Artisan at work' },
 ]
 
-export default function AboutGallery({short}) {
+export default function AboutGallery() {
     return (
         <section className="mah-w-screen px-80 py-16">
             <Heading title={"GALLERY"} subtitle={"EXPLORE OUR"} />

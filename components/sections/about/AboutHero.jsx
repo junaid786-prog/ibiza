@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {brand} from "@/constants/strings";
 
 export default function AboutHero() {
     return (
@@ -12,7 +13,7 @@ export default function AboutHero() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                 <h1 className="lg:text-9xl md:text-8xl sm:text-7xl font-bold text-white text-center font-serif">
-                    About Ibiza's
+                    About {brand}
                 </h1>
             </div>
         </section>
