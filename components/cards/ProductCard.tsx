@@ -2,6 +2,7 @@ import { Star, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image";
+import Link from "next/link";
 
 export const ProductCard= ({product}: {product: any}) => {
     return (
@@ -10,7 +11,9 @@ export const ProductCard= ({product}: {product: any}) => {
                 <div className="absolute top-0 left-0 z-10 m-2">
                     <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-100">New Arrival</Badge>
                 </div>
+                <Link href={`/products/${product.id}`}>
                 <Image src={product.image} alt="Elegant Summer Dress" width={400} height={800} layout="responsive" objectFit="cover" />
+                </Link>
                 <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
                     <p className="mt-1 text-sm text-gray-600">{product.shortDescription}</p>

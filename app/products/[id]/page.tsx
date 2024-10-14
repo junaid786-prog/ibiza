@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import Image from "next/image"
 import { Star, Heart, Share2 } from "lucide-react"
@@ -7,14 +9,14 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function ProductDetail() {
-  const [mainImage, setMainImage] = useState("/placeholder.svg?height=600&width=400")
+  const [mainImage, setMainImage] = useState("/dresses/dress-1.jpeg")
   const [selectedSize, setSelectedSize] = useState("m")
 
   const thumbnails = [
-    "/placeholder.svg?height=100&width=100",
-    "/placeholder.svg?height=100&width=100",
-    "/placeholder.svg?height=100&width=100",
-    "/placeholder.svg?height=100&width=100",
+    "/dresses/dress-1.jpeg",
+    "/dresses/dress-2.jpeg",
+    "/dresses/dress-3.jpeg",
+    "/dresses/dress-4.jpeg",
   ]
 
   return (
@@ -138,7 +140,11 @@ export default function ProductDetail() {
                 <div key={item} className="group relative">
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     <Image
-                        src="/placeholder.svg?height=300&width=300"
+                        src={
+                            item % 2 === 0
+                                ? "/dresses/dress-2.jpeg"
+                                : "/dresses/dress-3.jpeg"
+                        }
                         alt={`Related product ${item}`}
                         width={300}
                         height={300}
@@ -150,7 +156,7 @@ export default function ProductDetail() {
                       <h3 className="text-sm text-gray-700">
                         <a href="#">
                           <span aria-hidden="true" className="absolute inset-0" />
-                          Product {item}
+                          Beautiful Dress
                         </a>
                       </h3>
                     </div>
