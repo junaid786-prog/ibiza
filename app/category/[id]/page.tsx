@@ -11,7 +11,7 @@ const CategoryDetail = () => {
     const params = useParams();
     const router = useRouter();
 
-    let category = categories.find((category) => category.id ===
+    const category = categories.find((category) => category.id ===
         Number(params?.id)
     );
 
@@ -42,7 +42,7 @@ const CategoryDetail = () => {
                         <CardFooter>
                             <Button
                                 className="w-full"
-                                onClick={() => router.push(`/product/${product.id}`)}
+                                onClick={() => router.push(`/products/${product.id}`)}
                             >
                                 View Details
                             </Button>

@@ -33,7 +33,7 @@ const CollectionDetail = () => {
                     <p className="text-lg font-semibold">${product.price.toFixed(2)}</p>
                 </div>
                 <CardFooter>
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/products/${product.id}`}>
                     <Button className="w-full">View Details</Button>
                   </Link>
                 </CardFooter>

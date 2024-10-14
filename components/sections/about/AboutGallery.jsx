@@ -3,9 +3,9 @@ import {Heading} from "@/components/shared/header";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
-    { src: '/ibiza-1.jpeg', alt: 'Bohemian style clothing' },
-    { src: '/ibiza-2.jpeg', alt: 'Bohemian style clothing' },
-    { src: '/ibiza-shop.jpeg', alt: 'Artisan at work' },
+    { src: '/collections/coll-1.jpeg?height=300&width=300', alt: 'Bohemian style clothing' },
+    { src: '/collections/coll-2.jpeg?height=300&width=300', alt: 'Bohemian style clothing' },
+    { src: '/collections/coll-3.jpeg?height=300&width=300', alt: 'Artisan at work' },
 ]
 
 export default function AboutGallery({short}) {
@@ -14,9 +14,8 @@ export default function AboutGallery({short}) {
             <Heading title={"GALLERY"} subtitle={"EXPLORE OUR"} />
             <div className={`${short ? "grid grid-cols-2 space-y-2 space-x-2":"flex flex-col space-y-4 my-4"}`}>
                 {images.map((image, index) => (
-                    <div key={index} className="relative aspect-w-1 aspect-h-1 text-black">
+                    <div key={index} className="relative aspect-h-1 text-black">
                         <img src={image.src} alt={image.alt} className="rounded-lg w-full aspect-square"/>
-
                     </div>
                 ))}
             </div>
