@@ -10,9 +10,9 @@ const images = [
 
 export default function AboutPress() {
     return (
-        <section className="lg:p-16 md:p-12 sm:p-8 space-y-8 flex flex-col flex-wrap items-center bg-gray-200">
+        <section className="lg:p-16 md:p-12 sm:p-8 p-8 space-y-8 flex flex-col flex-wrap items-center bg-gray-200">
 
-            <div className="lg:mx-16 md:mx-12 sm:mx-8">
+            <div className="lg:mx-16 md:mx-12 mx-2">
                 <Heading title={"HOW IT STARTED"}/>
                 <div className={"space-y-2"}>
                     <p className="text-lg">

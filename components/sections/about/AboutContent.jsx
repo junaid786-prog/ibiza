@@ -38,8 +38,6 @@ export default function AboutContent({page}) {
             </div>
                 <div className={`grid lg:grid-cols-2 md:grid-cols-2 gap-4 mt-8 space-y-2`}>
                     {images.map((image, index) => (
-                            // <img src={image.src} alt={image.alt} className="rounded-lg w-80 aspect-square px-2"/>
-
                         <Image src={image.src} alt={image.alt} width={500} height={500} key={image.id} className="rounded-lg w-80 aspect-square px-2"/>
 
                     ))}
