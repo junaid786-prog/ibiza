@@ -1,6 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {Heading} from "@/components/shared/header";
 import Link from "next/link";
+import Image from "next/image";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
@@ -11,8 +12,8 @@ const images = [
 
 export default function AboutContent({page}) {
     return (
-        <section className={`w-full lg:py-16 md:py-12 sm:py-8 lg:px-16 md:px-12 sm:px-8 space-x-8 flex items-center ${page ? '':'mr-12 bg-gray-200'}`}>
-            <div className="container mr-8">
+        <section className={`w-full lg:py-16 md:py-12 sm:py-8 lg:px-16 md:px-12 sm:px-8 xs:px-8 flex lg:flex-row flex-col items-center ${page ? '':'bg-gray-200'}`}>
+            <div className="container lg:mr-8 lg:px-8 md:px-8 px-8 py-8">
                 <Heading title={page ? 'ABOUT US' : 'OUR STORY'} />
                 <div className="space-y-6 text-lg">
                     <p>
@@ -35,11 +36,12 @@ export default function AboutContent({page}) {
                     </Button>
                 }
             </div>
-                <div className={`grid lg:grid-cols-2 md:grid-cols-1 gap-4 mt-8`}>
+                <div className={`grid lg:grid-cols-2 md:grid-cols-2 gap-4 mt-8 space-y-2`}>
                     {images.map((image, index) => (
-                        <div key={index} className="relative aspect-w-1 aspect-h-1 text-black">
-                            <img src={image.src} alt={image.alt} className="rounded-lg w-full aspect-square"/>
-                        </div>
+                            // <img src={image.src} alt={image.alt} className="rounded-lg w-80 aspect-square px-2"/>
+
+                        <Image src={image.src} alt={image.alt} width={500} height={500} key={image.id} className="rounded-lg w-80 aspect-square px-2"/>
+
                     ))}
                 </div>
 

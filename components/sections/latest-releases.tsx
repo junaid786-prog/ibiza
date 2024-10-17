@@ -6,8 +6,8 @@ import {ProductCard} from "@/components/cards/ProductCard";
 
 export default function LatestReleases() {
   return (
-    <section className="lg:py-16 md:py-12 sm:py-8 lg:px-10 md:px-8 sm:px-4">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="lg:py-16 md:py-12 sm:py-12 xs:py-8 lg:px-10 md:px-8 sm:px-4">
+      <div className="container mx-auto px-4 sm:px-6 py-8 lg:px-8">
         <Heading title={"LATEST RELEASES"} subtitle={"DISCOVER"} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {
