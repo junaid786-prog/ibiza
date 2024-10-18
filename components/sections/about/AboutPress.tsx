@@ -1,5 +1,6 @@
-import {Heading} from "@/components/shared/header";
+import Heading from "@/components/shared/header";
 import {brand} from "@/constants/strings";
+import Image from "next/image";
 
 const images = [
     { src: '/inside-1.jpeg', alt: 'Ibiza beach' },
@@ -33,7 +34,7 @@ export default function AboutPress() {
             <div className="flex flex-1 space-x-4 lg:mx-8 md:mx-6 sm:mx-4 flex-wrap justify-center w-fit">
                 {images.map((image, index) => (
                     <div key={index} className="relative aspect-w-1 aspect-h-1 text-black my-2">
-                        <img src={image.src} alt={image.alt} className="rounded-lg w-72 aspect-square"/>
+                        <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover"/>
                     </div>
                 ))}
             </div>

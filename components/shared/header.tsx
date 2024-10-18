@@ -1,6 +1,6 @@
-export const Heading = (
+export default function Heading(
     { title, subtitle }: { title: string, subtitle?: string }
-) => {
+){
     return (
         <div className="text-center">
             <h3 className="lg:text-2xl md:text-2xl sm:text-xl text-start mb-2 sm:mb-1 capitalize">{subtitle}</h3>

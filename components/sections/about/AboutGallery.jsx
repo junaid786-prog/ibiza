@@ -1,5 +1,5 @@
 
-import {Heading} from "@/components/shared/header";
+import Heading from "@/components/shared/header";
 import Image from "next/image";
 
 const images = [

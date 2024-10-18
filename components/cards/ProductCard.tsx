@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image";
 import Link from "next/link";
 
-export const ProductCard= ({product}: {product: any}) => {
+const ProductCard = ({product}: {product: any})=>{
     return (
         <div className="w-full mx-auto">
             <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
@@ -37,3 +37,5 @@ export const ProductCard= ({product}: {product: any}) => {
         </div>
     )
 }
+
+export default ProductCard;

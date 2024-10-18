@@ -1,6 +1,6 @@
 
 import {collections} from "@/data/dummy-data";
-import {Heading} from "@/components/shared/header";
+import Heading from "@/components/shared/header";
 import CollectionCard from "@/components/cards/CollectionCard";
 
 export default function CollectionsPage() {
