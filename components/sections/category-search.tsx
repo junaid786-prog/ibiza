@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { categories } from "@/data/dummy-data";
-import { Heading } from "@/components/shared/header";
+import Heading from "@/components/shared/header";
 
 export default function CategorySearch() {
     return (

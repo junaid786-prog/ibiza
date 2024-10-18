@@ -17,10 +17,8 @@ export default function CollectionCard({ collection }: { collection: any }) {
                 </div>
                 <CardContent className="flex flex-col justify-between p-6 sm:w-3/5">
                     <div>
-
-
                     <div>
-                        <h3 className="text-4xl font-semibold text-primary mb-2">{collection?.name}</h3>
+                        <h3 className="lg:text-4xl md:text-3xl text-2xl font-semibold text-primary mb-2">{collection?.name}</h3>
                         <p className="text-xl text-muted-foreground mb-4">
                             {collection?.description}
                         </p>
@@ -30,7 +28,7 @@ export default function CollectionCard({ collection }: { collection: any }) {
                         <p className="text-lg mb-4">{brand} has the best collection of {collection?.name} for you.
                         </p>
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid lg:grid-cols-2 lg:space-x-2 md:grid-cols-1 my-2">
                     {
                         collection?.products?.slice(0,2)?.map((product: {
                             image: string;
@@ -38,7 +36,7 @@ export default function CollectionCard({ collection }: { collection: any }) {
                             name: any;
                             id: React.Key | null | undefined;
                             product:any}) => (
-                            <div key={product?.id} className="flex rounded-lg items-center justify-between p-2 bg-gray-200">
+                            <div key={product?.id} className="flex rounded-lg items-center justify-between p-2 bg-gray-200 m-1">
                                 {/*image*/}
                                 <div className={"h-full p-2 flex flex-col justify-between"}>
 

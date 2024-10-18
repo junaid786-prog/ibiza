@@ -1,5 +1,6 @@
-import {Heading} from "@/components/shared/header";
+import Heading from "@/components/shared/header";
 import {brand} from "@/constants/strings";
+import Image from "next/image";
 
 const images = [
     { src: '/inside-1.jpeg', alt: 'Ibiza beach' },
@@ -10,9 +11,9 @@ const images = [
 
 export default function AboutPress() {
     return (
-        <section className="lg:p-16 md:p-12 sm:p-8 space-y-8 flex flex-col flex-wrap items-center bg-gray-200">
+        <section className="lg:p-16 md:p-12 sm:p-8 p-8 space-y-8 flex flex-col flex-wrap items-center bg-gray-200">
 
-            <div className="lg:mx-16 md:mx-12 sm:mx-8">
+            <div className="lg:mx-16 md:mx-12 mx-2">
                 <Heading title={"HOW IT STARTED"}/>
                 <div className={"space-y-2"}>
                     <p className="text-lg">
@@ -33,7 +34,7 @@ export default function AboutPress() {
             <div className="flex flex-1 space-x-4 lg:mx-8 md:mx-6 sm:mx-4 flex-wrap justify-center w-fit">
                 {images.map((image, index) => (
                     <div key={index} className="relative aspect-w-1 aspect-h-1 text-black my-2">
-                        <img src={image.src} alt={image.alt} className="rounded-lg w-72 aspect-square"/>
+                        <Image src={image.src} alt={image.alt} layout="fill" objectFit="cover"/>
                     </div>
                 ))}
             </div>
