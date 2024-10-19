@@ -37,7 +37,7 @@ export default function AboutContent({ page }) {
             </div>
             <div className="flex flex-wrap justify-center lg:justify-start mt-8 lg:mt-0">
                 {images.map((image, index) => (
-                    <div key={index} className="w-1/2 lg:w-1/4 p-2">
+                    <div key={index} className="w-1/2 p-2">
                         <Image src={image.src} alt={image.alt} width={300} height={300} className="object-cover rounded-lg" />
                     </div>
                 ))}
