@@ -74,12 +74,17 @@ export default function Navbar() {
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
-                    Clothes
+                  <Link href="/collections">Clothes</Link>
                   </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
                     Blazers
+                  </MenubarTrigger>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
+                  <Link href="/wishlist">Wishlist</Link>
                   </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
