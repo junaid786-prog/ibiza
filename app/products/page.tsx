@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
+import Image from "next/image";
 
 const products = [
     { id: '1', name: 'Product 1', description: 'Description for product 1', imageUrl: '/images/product1.jpg', label: 'New' },
@@ -24,7 +25,15 @@ const ProductsPage = () => {
                                     <CardTitle>{product.name}</CardTitle>
                                     <CardDescription>{product.description}</CardDescription>
                                 </CardContent>
-                                <img src={product.imageUrl} alt={product.name} className="w-full h-64 object-cover" />
+                                <Image src={
+                                    product.imageUrl
+                                } alt={
+                                    product.name
+                                } width={
+                                    300
+                                } height={
+                                    300
+                                } className="object-cover w-full h-full rounded-md"/>
                             </Card>
                     </Link>
                 ))}

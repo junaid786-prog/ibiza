@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import {Heading} from "@/components/shared/header";
+
+import Heading from "@/components/shared/header";
+import Image from "next/image";
 
 const images = [
     { src: '/ibiza-enterance.jpeg', alt: 'Ibiza beach' },
@@ -8,14 +9,15 @@ const images = [
     { src: '/collections/coll-3.jpeg?height=300&width=300', alt: 'Artisan at work' },
 ]
 
-export default function AboutGallery({short}) {
+export default function AboutGallery() {
     return (
-        <section className="mah-w-screen px-80 py-16">
+        <section className="p-8 py-16">
             <Heading title={"GALLERY"} subtitle={"EXPLORE OUR"} />
-            <div className={`${short ? "grid grid-cols-2 space-y-2 space-x-2":"flex flex-col space-y-4 my-4"}`}>
+            <div className={`grid grid-cols-2 space-x-4 space-y-4`}>
                 {images.map((image, index) => (
-                    <div key={index} className="relative aspect-h-1 text-black">
-                        <img src={image.src} alt={image.alt} className="rounded-lg w-full aspect-square"/>
+                    <div key={index} className="relative text-black">
+                        {/*<img src={image.src} alt={image.alt} className="rounded-lg aspect-square"/>*/}
+                        <Image src={image.src} alt={image.alt} width={500} height={500} className="rounded-lg aspect-square w-full"/>
                     </div>
                 ))}
             </div>

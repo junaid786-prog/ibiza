@@ -147,7 +147,7 @@ export const latestReleases = [
 export const categories = [
     {
         id: 1,
-        name: "Blazers",
+        name: "Dresses",
         image: "/collections/coll-1.jpeg?height=300&width=300",
         products: [
             {
@@ -166,7 +166,7 @@ export const categories = [
     },
     {
         id: 2,
-        name: "Dresses",
+        name: "Pants",
         image: "/collections/coll-2.jpeg?height=300&width=300",
         products: [
             {
@@ -185,7 +185,7 @@ export const categories = [
     },
     {
         id: 3,
-        name: "Tops",
+        name: "Shirts",
         image: "/collections/coll-3.jpeg?height=300&width=300",
         products: [
             {
@@ -204,7 +204,7 @@ export const categories = [
     },
     {
         id: 4,
-        name: "Jeans",
+        name: "Bags",
         image: "/collections/coll-4.jpeg?height=300&width=300",
         products: [
             {
@@ -223,65 +223,8 @@ export const categories = [
     },
     {
         id: 5,
-        name: "Shoes",
+        name: "Caps",
         image: "/collections/shop-1.jpeg?height=300&width=300",
-        products: [
-            {
-                id: 1,
-                name: "Pantalón Ibiza",
-                price: 1200,
-                image: "/dresses/dress-5.jpeg",
-            },
-            {
-                id: 2,
-                name: "Pantalón Bolena",
-                price: 890,
-                image: "/dresses/dress-6.jpeg",
-            }
-        ]
-    },
-    {
-        id: 6,
-        name: "Bags",
-        image: "/collections/shop-2.jpeg?height=300&width=300",
-        products: [
-            {
-                id: 1,
-                name: "Pantalón Ibiza",
-                price: 1200,
-                image: "/dresses/dress-5.jpeg",
-            },
-            {
-                id: 2,
-                name: "Pantalón Bolena",
-                price: 890,
-                image: "/dresses/dress-6.jpeg",
-            }
-        ]
-    },
-    {
-        id: 7,
-        name: "Accessories",
-        image: "/collections/shop-3.jpeg?height=300&width=300",
-        products: [
-            {
-                id: 1,
-                name: "Pantalón Ibiza",
-                price: 1200,
-                image: "/dresses/dress-5.jpeg",
-            },
-            {
-                id: 2,
-                name: "Pantalón Bolena",
-                price: 890,
-                image: "/dresses/dress-6.jpeg",
-            }
-        ]
-    },
-    {
-        id: 8,
-        name: "Jewelry",
-        image: "/collections/shop-4.jpeg?height=300&width=300",
         products: [
             {
                 id: 1,

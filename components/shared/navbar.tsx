@@ -62,7 +62,7 @@ export default function Navbar() {
                 {/* COLLECTIONS */}
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
-                    Collections
+                    <Link href="/collections">Collections</Link>
                   </MenubarTrigger>
                   <MenubarContent>
                     {collections.map((collection) => (
@@ -74,12 +74,17 @@ export default function Navbar() {
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
-                    Clothes
+                  <Link href="/collections">Clothes</Link>
                   </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>
                   <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
                     Blazers
+                  </MenubarTrigger>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger className="text-sm font-medium hover:text-gray-600 transition-colors">
+                  <Link href="/wishlist">Wishlist</Link>
                   </MenubarTrigger>
                 </MenubarMenu>
                 <MenubarMenu>

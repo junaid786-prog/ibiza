@@ -4,11 +4,12 @@ import { useState } from 'react'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { ShoppingBag, X, Plus, Minus } from "lucide-react"
+import Image from 'next/image'
 
 // This would typically come from your global state management
 const initialCartItems = [
-  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/placeholder.svg?height=80&width=80" },
-  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/placeholder.svg?height=80&width=80" },
+  { id: 1, name: "Handwoven Basket", price: 59.99, quantity: 1, image: "/dresses/dress-1.jpeg" },
+  { id: 2, name: "Ceramic Vase", price: 89.99, quantity: 2, image: "/dresses/dress-2.jpeg" },
 ]
 
 export default function CartSheet() {
@@ -47,7 +48,7 @@ export default function CartSheet() {
           <div className="flex-grow overflow-auto">
             {cartItems.map(item => (
               <div key={item.id} className="flex items-center py-4 border-b">
-                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
+                <Image src={item.image} alt={item.name} width={80} height={80} className="object-cover rounded" />
                 <div className="ml-4 flex-grow">
                   <h3 className="font-medium">{item.name}</h3>
                   <p className="text-sm text-gray-500">${item.price.toFixed(2)}</p>
