@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
 import { categories } from "@/data/dummy-data";
 import Heading from "@/components/shared/header";
 import CollectionCard from "../cards/CollectionCard";
