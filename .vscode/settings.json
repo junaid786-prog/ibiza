@@ -3,7 +3,7 @@
     "editor.formatOnSave": true, // Automatically format on save
     "prettier.configPath": "./prettier.config.js", // Path to your custom Prettier configuration file
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true // Fix ESLint issues automatically on save
+      "source.fixAll.eslint": "explicit"
     }
   }
   
