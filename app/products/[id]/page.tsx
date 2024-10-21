@@ -1,144 +1,171 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Minus, Plus } from 'lucide-react'
+import { useState } from "react"
+import Image from "next/image"
+import { Star, Heart, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-const product = {
-  name: "Blusa Bolena Naranja",
-  price: 890,
-  description: "Blusa de algodón con bordado a mano. Diseño exclusivo de Quetzal.",
-  images: [
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
-    "/placeholder.svg?height=600&width=600",
-  ],
-  sizes: ["XS", "S", "M", "L", "XL"],
-  details: "Blusa de algodón con bordado a mano. Diseño exclusivo de Quetzal. Hecha en México por artesanas locales.",
-  care: "Lavar a mano con agua fría. No usar secadora. Planchar a temperatura baja.",
-}
-
 export default function ProductDetail() {
-  const [currentImage, setCurrentImage] = useState(0)
-  const [quantity, setQuantity] = useState(1)
-  const [selectedSize, setSelectedSize] = useState(product.sizes[0])
+  const [mainImage, setMainImage] = useState("/dresses/dress-1.jpeg")
+  const [selectedSize, setSelectedSize] = useState("m")
 
-  const nextImage = () => setCurrentImage((prev) => (prev + 1) % product.images.length)
-  const prevImage = () => setCurrentImage((prev) => (prev - 1 + product.images.length) % product.images.length)
+  const thumbnails = [
+    "/dresses/dress-1.jpeg",
+    "/dresses/dress-2.jpeg",
+    "/dresses/dress-3.jpeg",
+    "/dresses/dress-4.jpeg",
+  ]
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Image Gallery */}
-        <div className="relative">
-          <div className="aspect-square overflow-hidden rounded-lg">
-            <Image
-              src={product.images[currentImage]}
-              alt={product.name}
-              width={600}
-              height={600}
-              className="object-cover w-full h-full"
-            />
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Image Gallery */}
+          <div className="space-y-4">
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-gray-100">
+              <Image
+                  src={mainImage}
+                  alt="Main product image"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full object-center object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-4 gap-4">
+              {thumbnails.map((thumb, index) => (
+                  <button
+                      key={index}
+                      className="relative aspect-square overflow-hidden rounded-md bg-gray-100"
+                      onClick={() => setMainImage(thumb)}
+                  >
+                    <Image
+                        src={thumb}
+                        alt={`Thumbnail ${index + 1}`}
+                        layout="fill"
+                        objectFit="cover"
+                        className="w-full h-full object-center object-cover"
+                    />
+                  </button>
+              ))}
+            </div>
           </div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 left-4 transform -translate-y-1/2"
-            onClick={prevImage}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute top-1/2 right-4 transform -translate-y-1/2"
-            onClick={nextImage}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-          <div className="flex mt-4 space-x-4">
-            {product.images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImage(index)}
-                className={`w-20 h-20 rounded-md overflow-hidden ${
-                  index === currentImage ? 'ring-2 ring-primary' : ''
-                }`}
-              >
-                <Image
-                  src={image}
-                  alt={`${product.name} thumbnail ${index + 1}`}
-                  width={80}
-                  height={80}
-                  className="object-cover w-full h-full"
-                />
-              </button>
+
+          {/* Product Details */}
+          <div className="space-y-6">
+            <div>
+              <h1 className="text-3xl font-bold">Elegant Summer Dress</h1>
+              <div className="mt-2 flex items-center">
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <span className="ml-2 text-sm text-gray-500">(121 reviews)</span>
+              </div>
+            </div>
+
+            <div className="text-2xl font-bold">$129.99</div>
+
+            <p className="text-gray-600">
+              A versatile and stylish dress perfect for summer occasions. Made from lightweight, breathable fabric with a
+              flattering silhouette that suits all body types.
+            </p>
+
+            <div>
+              <h3 className="text-sm font-medium text-gray-900">Size</h3>
+              <RadioGroup value={selectedSize} onValueChange={setSelectedSize} className="mt-2">
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-8 lg:grid-cols-4">
+                  {["xs", "s", "m", "l", "xl"].map((size) => (
+                      <Label
+                          key={size}
+                          className={`flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none ${
+                              selectedSize === size
+                                  ? "border-transparent bg-primary text-primary-foreground shadow-sm"
+                                  : "border-gray-200 bg-white text-gray-900 hover:bg-gray-50"
+                          }`}
+                      >
+                        <RadioGroupItem value={size} className="sr-only" />
+                        {size}
+                      </Label>
+                  ))}
+                </div>
+              </RadioGroup>
+            </div>
+
+            <div className="flex space-x-4">
+              <Button className="flex-1">Add to Cart</Button>
+              <Button variant="outline" size="icon">
+                <Heart className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon">
+                <Share2 className="h-4 w-4" />
+              </Button>
+            </div>
+
+            <Tabs defaultValue="description" className="w-full">
+              <TabsList>
+                <TabsTrigger value="description">Description</TabsTrigger>
+                <TabsTrigger value="features">Features</TabsTrigger>
+                <TabsTrigger value="shipping">Shipping</TabsTrigger>
+              </TabsList>
+              <TabsContent value="description" className="text-sm text-gray-600">
+                This elegant summer dress is designed to keep you cool and stylish. The lightweight fabric drapes
+                beautifully, creating a flattering silhouette for all body types. Perfect for beach outings, garden
+                parties, or casual day wear.
+              </TabsContent>
+              <TabsContent value="features" className="text-sm text-gray-600">
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Breathable, lightweight fabric</li>
+                  <li>Adjustable waist tie</li>
+                  <li>Side pockets</li>
+                  <li>UV protection</li>
+                  <li>Machine washable</li>
+                </ul>
+              </TabsContent>
+              <TabsContent value="shipping" className="text-sm text-gray-600">
+                Free standard shipping on orders over $100. Express and international shipping options available at
+                checkout. Please allow 1-3 business days for processing.
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div>
+
+        {/* Related Products */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold mb-4">You May Also Like</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[1, 2, 3, 4].map((item) => (
+                <div key={item} className="group relative">
+                  <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                    <Image
+                        src={
+                            item % 2 === 0
+                                ? "/dresses/dress-2.jpeg"
+                                : "/dresses/dress-3.jpeg"
+                        }
+                        alt={`Related product ${item}`}
+                        width={300}
+                        height={300}
+                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                    />
+                  </div>
+                  <div className="mt-4 flex justify-between">
+                    <div>
+                      <h3 className="text-sm text-gray-700">
+                        <a href="#">
+                          <span aria-hidden="true" className="absolute inset-0" />
+                          Beautiful Dress
+                        </a>
+                      </h3>
+                    </div>
+                    <p className="text-sm font-medium text-gray-900">$99.99</p>
+                  </div>
+                </div>
             ))}
           </div>
         </div>
-
-        {/* Product Information */}
-        <div>
-          <h1 className="text-3xl font-bold font-serif mb-4">{product.name}</h1>
-          <p className="text-2xl font-semibold mb-6">${product.price.toFixed(2)}</p>
-          <p className="mb-6">{product.description}</p>
-
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-2">Talla</h2>
-            <RadioGroup value={selectedSize} onValueChange={setSelectedSize}>
-              <div className="flex flex-wrap gap-4">
-                {product.sizes.map((size) => (
-                  <div key={size}>
-                    <RadioGroupItem value={size} id={`size-${size}`} className="peer sr-only" />
-                    <Label
-                      htmlFor={`size-${size}`}
-                      className="flex h-10 w-10 items-center justify-center rounded-md border border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary peer-data-[state=checked]:text-primary"
-                    >
-                      {size}
-                    </Label>
-                  </div>
-                ))}
-              </div>
-            </RadioGroup>
-          </div>
-
-          <div className="flex items-center mb-6">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            >
-              <Minus className="h-4 w-4" />
-            </Button>
-            <span className="mx-4 text-xl">{quantity}</span>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setQuantity(quantity + 1)}
-            >
-              <Plus className="h-4 w-4" />
-            </Button>
-          </div>
-
-          <Button className="w-full mb-6" size="lg">
-            Agregar al Carrito
-          </Button>
-
-          <Tabs defaultValue="details">
-            <TabsList>
-              <TabsTrigger value="details">Detalles</TabsTrigger>
-              <TabsTrigger value="care">Cuidados</TabsTrigger>
-            </TabsList>
-            <TabsContent value="details">{product.details}</TabsContent>
-            <TabsContent value="care">{product.care}</TabsContent>
-          </Tabs>
-        </div>
       </div>
-    </div>
   )
 }
